@@ -77,7 +77,7 @@
   }
 
   .hero-right {
-    order: -1;
+    order: 1;
   }
 
   .hero-right img {
@@ -102,7 +102,9 @@
   .skills-grid {
     gap: 1rem;
   }
-
+  .experience-content{
+    width: 100%;
+  }
   /* Footer */
   footer {
     padding: 2rem 0;

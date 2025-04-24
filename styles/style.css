@@ -4,6 +4,7 @@
   --secondaryTextColor: #656d72; /* Untuk text biasa seperti paragraph contohnya */
   --pinkColor: rgb(255, 201, 240);
   --yellowColor: rgb(255, 230, 140);
+  --blueColor: rgb(157, 220, 255);
   --borderColor: #f1f1f1;
 
   --primaryBackgroundColor: #fff;
@@ -26,6 +27,7 @@
 }
 
 body {
+  width: 100%;
   font-family: "Inter", sans-serif;
   /* position: absolute; */
   background-repeat: repeat;
@@ -151,7 +153,8 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  transition: height 0.3s ease;
+  height: 80px;
+  transition: 0.3s ease;
   overflow: hidden;
   width: 90%;
   justify-content: start;
@@ -159,9 +162,10 @@ a {
 
 .navbar.open {
   padding-bottom: 30px;
+  height: 350px;
 }
 
-.logo a{
+.logo a {
   text-decoration: none;
   background-color: pink;
   padding: 5px 10px;
@@ -191,10 +195,12 @@ a {
 .hire-button {
   background-color: black;
   color: white;
-  padding: 10px 20px;
+  padding: 20px 16px;
   border-radius: 25px;
   font-weight: bold;
   border: none;
+  font-size: 18px;
+  width: 120px;
   cursor: pointer;
 }
 
@@ -311,7 +317,7 @@ a {
   margin-bottom: 2rem;
   background-color: rgb(255, 230, 140);
 }
-.service-1 {
+.card-1 {
   border: 2px solid black;
   padding: 3rem 2rem;
   display: flex;
@@ -321,7 +327,7 @@ a {
   background: rgb(255, 201, 240);
   border-radius: var(--itemBorderRadius);
 }
-.service-2 {
+.card-2 {
   border: 2px solid black;
   padding: 3rem 2rem;
   display: flex;
@@ -331,7 +337,7 @@ a {
   background: rgb(255, 230, 140);
   border-radius: var(--itemBorderRadius);
 }
-.service-3 {
+.card-3 {
   border: 2px solid black;
   padding: 3rem 2rem;
   display: flex;
@@ -341,7 +347,7 @@ a {
   background: rgb(157, 220, 255);
   border-radius: var(--itemBorderRadius);
 }
-.service-4 {
+.card-4 {
   border: 2px solid black;
   padding: 3rem 2rem;
   display: flex;
@@ -368,7 +374,49 @@ a {
 .service-icon svg {
   fill: var(--primaryIconColor);
 }
+/* Experience section */
 
+#experiences {
+  margin-bottom: 2rem;
+}
+.experience-content {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  width: 800px;
+}
+.experience-content:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+.experience-title {
+  text-align: start;
+  width: 100%;
+  border-bottom: 1px solid black;
+  border-radius: 2px;
+  flex-wrap: wrap;
+}
+.experience-title h3 {
+  padding-left: 2rem;
+  margin-bottom: 8px;
+}
+.experience-detail {
+  font-size: 20px;
+  margin-top: 8px;
+}
+/*  */
+
+/* FAQ */
+#faq {
+  margin-bottom: 2rem;
+}
+.faq-content {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  width: 800px;
+}
+/*  */
 /* Travel Country */
 #travel {
   padding: var(--sectionPadding);
@@ -485,8 +533,9 @@ a {
 .btn-submit {
   width: 100%;
   padding: 0.75rem 1.3rem;
-  background-color: var(--primaryIconColor);
-  color: #fff;
+  background-color: var(--pinkColor);
+  color: black;
+  font-size: 18px;
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -505,7 +554,7 @@ a {
 }
 
 .contact-item-icon {
-  background: var(--thirdBackgroundColor);
+  background: var(--pinkColor);
   /* padding: 0.8rem 1rem; */
   width: 53px;
   height: 53px;
@@ -516,7 +565,7 @@ a {
 }
 
 .contact-item-icon svg {
-  fill: var(--primaryIconColor);
+  fill: black;
 }
 
 .contact-item-detail h4 {
@@ -538,6 +587,7 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  color: white;
 }
 
 .footer-left,
@@ -547,24 +597,29 @@ footer {
   font-weight: bold;
   font-size: 0.95rem;
 }
-
+.footer-left a {
+  color: white;
+  font-weight: bold;
+}
 .footer-center h2 {
   font-size: 1.5rem;
   margin-bottom: 0.8rem;
+  color: white;
 }
 
 .footer-center p {
   max-width: 500px;
   margin: 0 auto 1.5rem;
   line-height: 1.6;
-  color: #cfcfcf;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .hire-btn {
-  padding: 0.6rem 1.5rem;
+  padding: 1rem 1.5rem;
   background: white;
   border: none;
-  border-radius: 999px;
+  font-size: 20px;
+  border-radius: 60px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -572,7 +627,27 @@ footer {
 .template-link {
   margin-left: auto;
 }
-
+/* fab  */
+.fab {
+  position: fixed;
+  bottom: 40px;
+  right: 80px;
+  z-index: 1000;
+}
+#fab-btn {
+  left: 100;
+  border: 1px solid var(--blueColor);
+  background-color: var(--blueColor);
+  padding: 16px;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 40px;
+}
+#fab-btn #fab-icon {
+  color: black;
+  font-size: 20px;
+}
 @media (min-width: 768px) {
   .footer-container {
     flex-direction: row;
@@ -586,9 +661,18 @@ footer {
     max-width: 500px;
     margin: 0 auto;
   }
-
+  .footer-center p {
+    color: rgba(255, 255, 255, 0.6);
+  }
   .footer-right {
     flex-direction: column;
     align-items: flex-end;
+    color: white;
+  }
+  .footer-right p {
+    font-weight: bold;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
   }
 }

@@ -10,3 +10,6 @@ window.onbeforeunload = () => {
     form.reset();
   }
 };
+document.getElementById("fab-btn").addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
