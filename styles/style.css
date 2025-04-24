@@ -156,7 +156,7 @@ a {
   height: 80px;
   transition: 0.3s ease;
   overflow: hidden;
-  width: 90%;
+  width: 100%;
   justify-content: start;
 }
 
@@ -185,7 +185,13 @@ a {
   color: black;
   font-weight: 500;
 }
-
+.menu a:hover {
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 5px 10px;
+  color: black;
+  background-color: pink;
+}
 .socials {
   display: flex;
   gap: 15px;
@@ -203,7 +209,11 @@ a {
   width: 120px;
   cursor: pointer;
 }
-
+.hire-button:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
 .menu-icon {
   display: none;
   font-size: 28px;
@@ -245,6 +255,10 @@ a {
   background-color: #ffc9f0;
   border-radius: 16px;
 }
+.hero-right:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
 .hero-right img {
   width: auto;
   max-width: 540px;
@@ -270,22 +284,10 @@ a {
   display: inline-flex;
   overflow: hidden;
 }
-/* #hire-me-btn::before {
-  content: "⭐";
-  position: absolute;
-  left: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-} */
-
-.hire-me-btn .icon {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.hire-me-btn:hover .icon {
-  opacity: 1;
-  visibility: visible;
+.hire-me-btn:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
 }
 #cv-btn {
   text-decoration: none;
@@ -297,6 +299,10 @@ a {
   font-size: 1.1rem;
   transition: all 0.3s ease-in-out;
   padding: 11px 20px 13px;
+}
+#cv-btn:hover {
+  background-color: black;
+  color: white;
 }
 /* My Content Section */
 #services {
@@ -316,6 +322,10 @@ a {
   line-height: 1.2;
   margin-bottom: 2rem;
   background-color: rgb(255, 230, 140);
+}
+.service-content:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
 }
 .card-1 {
   border: 2px solid black;
@@ -362,7 +372,6 @@ a {
   font-weight: 500;
   font-size: 1.05rem;
 }
-
 .service-icon {
   background: #ffff;
   width: fit-content;
@@ -387,7 +396,7 @@ a {
 }
 .experience-content:hover {
   transform: scale(1.05);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .experience-title {
   text-align: start;
@@ -407,7 +416,7 @@ a {
 /*  */
 
 /* FAQ */
-#faq {
+#faqs {
   margin-bottom: 2rem;
 }
 .faq-content {
@@ -415,6 +424,10 @@ a {
   text-align: center;
   display: flex;
   width: 800px;
+}
+.faq-content:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
 }
 /*  */
 /* Travel Country */
@@ -628,8 +641,12 @@ footer {
   font-weight: bold;
   cursor: pointer;
 }
-
-.template-link {
+.hire-btn:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
+.hire-btn .template-link {
   margin-left: auto;
 }
 /* fab  */
