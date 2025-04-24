@@ -1,0 +1,594 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --primaryTextColor: #232e35; /* Untuk title atau judul */
+  --secondaryTextColor: #656d72; /* Untuk text biasa seperti paragraph contohnya */
+  --pinkColor: rgb(255, 201, 240);
+  --yellowColor: rgb(255, 230, 140);
+  --borderColor: #f1f1f1;
+
+  --primaryBackgroundColor: #fff;
+  --secondaryBackgroundColor: #fbfbfb;
+  --thirdBackgroundColor: #f5f3fe;
+
+  --primaryIconColor: #7e74f1;
+  --primaryIconColorHover: #5d51e8;
+
+  --sectionPadding: 6rem 0;
+
+  --itemBorderRadius: 0.7rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  /* position: absolute; */
+  background-repeat: repeat;
+  background-position: left top;
+  background-size: 24px auto;
+  background-color: rgba(255, 252, 252, 0.644);
+  background-blend-mode: lighten;
+  background-image: url(https://framerusercontent.com/images/c0EZxtMucSR6UOSZk2TBnWsqr4.svg);
+  border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--primaryTextColor);
+}
+
+p {
+  font-size: 1rem; /* 16 px */
+  line-height: 1.9rem; /*30.4 px */
+}
+
+p,
+span,
+label,
+input,
+textarea,
+li {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* End Preparation */
+
+.main-container {
+  padding-top: 1rem;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-container {
+    width: 90%;
+  }
+}
+
+/* Buttons */
+.btn {
+  padding: 1rem 1.5rem;
+  background: white;
+  border: 1.5px solid var(--borderColor);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+/* Titles */
+.section-title {
+  margin: 1rem 0 4rem;
+  font-size: 2rem;
+  margin: 10 auto;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+}
+
+.pre-title {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: black;
+  position: relative;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.pre-title::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--lineColor);
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 50%;
+}
+
+/* Layouts */
+.grid-1 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+/* --- Logo and Navigation Menu --- */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  border: 1px solid #000;
+  border-radius: 40px;
+  margin: 20px;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  transition: height 0.3s ease;
+  overflow: hidden;
+  width: 90%;
+  justify-content: start;
+}
+
+.navbar.open {
+  padding-bottom: 30px;
+}
+
+.logo a{
+  text-decoration: none;
+  background-color: pink;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: black;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.hire-button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+#hero {
+  height: 720px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* We're not going to use automatic template columns, because we need to know when the columns is go below. So we can exchange the order of the element */
+  margin-top: 100px;
+}
+.hero-left .pre-title {
+  color: black;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero-left .pre-title span {
+  color: black;
+  background-color: var(--yellowColor);
+}
+.hero-left p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.hero-name span {
+  color: var(--primaryIconColor) !important;
+}
+.hero-right {
+  border: 2px solid black;
+  align-content: center;
+  align-items: center;
+  background-color: #ffc9f0;
+  border-radius: 16px;
+}
+.hero-right img {
+  width: auto;
+  max-width: 540px;
+  max-height: 450px;
+  border: 2px solid black;
+  border-radius: 16px;
+  box-sizing: content-box;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+.hire-me-btn {
+  text-decoration: none;
+  background-color: black;
+  border-radius: 40px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+  padding: 11px 20px 13px;
+  display: inline-flex;
+  overflow: hidden;
+}
+/* #hire-me-btn::before {
+  content: "⭐";
+  position: absolute;
+  left: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+} */
+
+.hire-me-btn .icon {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.hire-me-btn:hover .icon {
+  opacity: 1;
+  visibility: visible;
+}
+#cv-btn {
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 40px;
+  color: black;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+  padding: 11px 20px 13px;
+}
+/* My Content Section */
+#services {
+  padding: var(--sectionPadding);
+}
+
+.services .pre-title {
+  margin: 0 auto;
+}
+
+.service-title {
+  display: inline-block;
+  padding-right: auto;
+  color: var(--primaryTextColor);
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  background-color: rgb(255, 230, 140);
+}
+.service-1 {
+  border: 2px solid black;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgb(255, 201, 240);
+  border-radius: var(--itemBorderRadius);
+}
+.service-2 {
+  border: 2px solid black;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgb(255, 230, 140);
+  border-radius: var(--itemBorderRadius);
+}
+.service-3 {
+  border: 2px solid black;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgb(157, 220, 255);
+  border-radius: var(--itemBorderRadius);
+}
+.service-4 {
+  border: 2px solid black;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgb(255, 201, 240);
+  border-radius: var(--itemBorderRadius);
+}
+.service h4 {
+  margin: 1.5rem 0;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.service-icon {
+  background: #ffff;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 1.3rem;
+  border-radius: 0.5rem;
+}
+
+.service-icon svg {
+  fill: var(--primaryIconColor);
+}
+
+/* Travel Country */
+#travel {
+  padding: var(--sectionPadding);
+}
+
+.travel {
+  border-radius: var(--itemBorderRadius);
+  overflow: hidden;
+  border: 1px solid var(--borderColor);
+}
+
+.travel-cover {
+  height: 250px;
+}
+
+.travel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.travel-info {
+  padding: 2rem 1.5rem;
+}
+
+.travel-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.travel h4 {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.travel-title a svg:hover {
+  fill: var(--primaryIconColor);
+}
+
+.travel-title a svg {
+  transition: 0.2s ease-in-out;
+}
+
+.travel-tags {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* Skills and Education */
+#tips {
+  padding: var(--sectionPadding);
+  background: var(--secondaryBackgroundColor);
+}
+
+/* Right side of Skills */
+.tips-list {
+  /* display: grid; */
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.5rem;
+}
+
+.subtips ul {
+  line-height: 2rem;
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tips-right ul {
+  line-height: 2rem;
+  padding: 0 1rem;
+}
+
+/* Contact Section */
+#contact {
+  padding: var(--sectionPadding);
+}
+
+.contact {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.contact-form div {
+  margin-bottom: 1.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  font-family: "Roboto", sans-serif;
+  background: var(--secondaryBackgroundColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 3px;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9d9fa1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 1px solid #516e6d;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.75rem 1.3rem;
+  background-color: var(--primaryIconColor);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-submit:hover {
+  background-color: var(--primaryIconColorHover);
+}
+
+/* Contact Section - Right Side */
+.contact-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-item-icon {
+  background: var(--thirdBackgroundColor);
+  /* padding: 0.8rem 1rem; */
+  width: 53px;
+  height: 53px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-item-icon svg {
+  fill: var(--primaryIconColor);
+}
+
+.contact-item-detail h4 {
+  margin-bottom: 0.6rem;
+}
+
+/* Footer Section */
+footer {
+  margin-top: 3rem;
+  background: #000;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 3rem 3rem 0 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.footer-center h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-center p {
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+  color: #cfcfcf;
+}
+
+.hire-btn {
+  padding: 0.6rem 1.5rem;
+  background: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.template-link {
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .footer-center {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
